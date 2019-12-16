@@ -8,7 +8,7 @@ def calulate_fuel(fuel):
     return math.floor(int(fuel) / 3) - 2
 
 output = []
-with open("../1/data.txt", "r") as f:
+with open(os.path.join(os.path.dirname(__file__), "data.txt"), "r") as f:
    for line in f:
        fuel = calulate_fuel(line.strip())
        current_fuel = calulate_fuel(copy.deepcopy(fuel))
