@@ -1,4 +1,4 @@
-# Advent of code - 2019 Day 4
+# Advent of code - 2019 Day 4 Part 2
 # https://adventofcode.com/2019/day/4
 
 from itertools import groupby, starmap
