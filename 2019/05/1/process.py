@@ -20,21 +20,9 @@ while True:
     param3 = 0
 
     try:
-        param1 = int(mode_string[-3])
-        if param1 == 0:
-            param1 = values[index + 1]
-        else:
-            param1 = index + 1
-        param2 = int(mode_string[-4])
-        if param2 == 0:
-            param2 = values[index + 2]
-        else:
-            param2 = index + 2
-        param3 = int(mode_string[-5])
-        if param3 == 0:
-            param3 = values[index + 3]
-        else:
-            param3 = index + 3
+        param1 = values[index + 1] if int(mode_string[-3]) == 0 else index + 1
+        param2 = values[index + 2] if int(mode_string[-4]) == 0 else index + 2
+        param3 = values[index + 3] if int(mode_string[-5]) == 0 else index + 3
     except IndexError:
         pass
 
