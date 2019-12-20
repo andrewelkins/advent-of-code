@@ -14,7 +14,7 @@ while True:
         break
 
     mode_string = str(f"{values[index]:06}")
-    
+
     param1 = 0
     param2 = 0
     param3 = 0
@@ -32,14 +32,10 @@ while True:
     if current_value == 99:
         break
     elif current_value == 1:
-        values[param3] = (
-            values[param1] + values[param2]
-        )
+        values[param3] = values[param1] + values[param2]
 
     elif current_value == 2:
-        values[param3] = (
-            values[param1] * values[param2]
-        )
+        values[param3] = values[param1] * values[param2]
     elif current_value == 3:
         values[param1] = int(input("Enter value: "))
         index_increment = 2
@@ -48,5 +44,3 @@ while True:
         index_increment = 2
 
     index += index_increment
-
-print(f"Printing total: {values[0]}")
