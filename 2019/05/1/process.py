@@ -33,7 +33,6 @@ while True:
         break
     elif current_value == 1:
         values[param3] = values[param1] + values[param2]
-
     elif current_value == 2:
         values[param3] = values[param1] * values[param2]
     elif current_value == 3:
