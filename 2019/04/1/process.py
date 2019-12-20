@@ -6,9 +6,10 @@ from operator import le
 
 
 def has_adjacent(num):
-    for _, g in groupby(list(str(num))):
-        if len(list(g)) > 1:
-            return True
+    return if 2 in [len(list(g)) for _, g in groupby(list(str(num)))]
+    # for _, g in groupby(list(str(num))):
+    #     if len(list(g)) == 2:
+    #         return True
 
 
 def reduce_numbers(values):
