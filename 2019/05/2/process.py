@@ -30,16 +30,31 @@ while True:
     index_increment = 4
 
     if current_value == 99:
+        print("End.")
         break
     elif current_value == 1:
         values[param3] = values[param1] + values[param2]
     elif current_value == 2:
         values[param3] = values[param1] * values[param2]
     elif current_value == 3:
-        values[param1] = int(input("Enter value: "))
+        # values[param1] = int(input("Enter value: "))
+        print("diagnostic code for system ID set to 5")
+        values[param1] = 5
         index_increment = 2
     elif current_value == 4:
         print(values[param1])
         index_increment = 2
+    elif current_value == 5:
+        index = values[param2] if values[param1] != 0 else index + 4
+        index_increment = 0
+    elif current_value == 6:
+        index = values[param2] if values[param1] == 0 else index + 4
+        index_increment = 0
+    elif current_value == 7:
+        values[param3] = 1 if values[param1] < values[param2] else 0
+    elif current_value == 8:
+        values[param3] = 1 if values[param1] == values[param2] else 0
 
     index += index_increment
+
+# Part 1: 7286649, Part 2: ??
