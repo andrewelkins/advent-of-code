@@ -13,11 +13,13 @@ def process(data):
         count += num_orbits
     return count
 
+
 orbit_data = {}
 with open(os.path.join(os.path.dirname(__file__), "../data.txt"), "r") as f:
     for line in f:
         # child > parent
-        orbit_data[line.strip().split(")")[1]] = line.strip().split(")")[0]
+        relation = line.strip().split(")")
+        orbit_data[relation[1]] = relation[0]
 
 
 print(process(orbit_data))
