@@ -42,7 +42,6 @@ while True:
         values[param1] = 5
         index_increment = 2
     elif current_value == 4:
-        print(values[param1])
         index_increment = 2
     elif current_value == 5:
         index = values[param2] if values[param1] != 0 else index + 3
