@@ -45,10 +45,10 @@ while True:
         print(values[param1])
         index_increment = 2
     elif current_value == 5:
-        index = values[param2] if values[param1] != 0 else index + 4
+        index = values[param2] if values[param1] != 0 else index + 3
         index_increment = 0
     elif current_value == 6:
-        index = values[param2] if values[param1] == 0 else index + 4
+        index = values[param2] if values[param1] == 0 else index + 3
         index_increment = 0
     elif current_value == 7:
         values[param3] = 1 if values[param1] < values[param2] else 0
