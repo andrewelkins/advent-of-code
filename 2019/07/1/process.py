@@ -33,7 +33,7 @@ def process(vals):
         index_increment = 4
 
         if current_value == 99:
-            print("End.")
+            # print("End.")
             return result
             break
         elif current_value == 1:
@@ -63,27 +63,37 @@ def process(vals):
         index += index_increment
 
 
-l = [4, 3, 2, 1, 0]
-permutations = itertools.permutations(l)
-high = 0
-for i in list(permutations):
-    n = process(
-        [
-            i[4],
-            int(
-                process(
-                    [
-                        i[3],
-                        int(
-                            process(
-                                [i[2], int(process([i[1], int(process([i[0], 0]))]))]
-                            )
-                        ),
-                    ]
-                )
-            ),
-        ]
-    )
-    if n > high:
-        high = n
-print(high)
+
+def perm_calc(vals, init=0):
+    permutations = itertools.permutations(vals)
+    high = 0
+    for i in list(permutations):
+        n = process(
+            [
+                i[4],
+                int(
+                    process(
+                        [
+                            i[3],
+                            int(
+                                process(
+                                    [i[2], int(process([i[1], int(process([i[0], init]))]))]
+                                )
+                            ),
+                        ]
+                    )
+                ),
+            ]
+        )
+        if n > high:
+            high = n
+    return high
+
+main_loop = [4, 3, 2, 1, 0]
+feedback_loop = [5, 6, 7, 8, 9]
+main_loop_result = perm_calc(main_loop)
+if main_loop_result == 880726:
+    print(main_loop_result)
+    print(perm_calc(feedback_loop, main_loop_result))
+else:
+    print("Error in main logic")
