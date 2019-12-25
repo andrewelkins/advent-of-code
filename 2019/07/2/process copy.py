@@ -10,7 +10,6 @@ with open(os.path.join(os.path.dirname(__file__), "../../07/data.txt"), "r") as 
 
 
 def process(vals, index=0):
-
     result = 0
     while True:
         if index >= len(values) - 1:
@@ -64,16 +63,13 @@ def process(vals, index=0):
 
 
 def perm_calc(vals, init=0, index_init={"a": 0, "b": 0, "c": 0, "d": 0, "e": 0}):
-    # permutations = itertools.permutations(vals)
-    permutations = vals
     high = 0
-    a = b = c = d = e = [0, 0]
-    for i in list([permutations]):
-        a = process([i[0], init])
-        b = process([i[0], b])
-        c = process([i[0], c])
-        d = process([i[0], d])
-        e = process([i[0], e])
+    for i in list(itertools.permutations(vals)):
+        a = process([i[0], init], index_init['a'])
+        b = process([i[1], a], index_init['b'])
+        c = process([i[2], b], index_init['c'])
+        d = process([i[3], c], index_init['d'])
+        e = process([i[4], d], index_init['e'])
 
         if e[0] > high:
             high = n
@@ -83,6 +79,7 @@ def perm_calc(vals, init=0, index_init={"a": 0, "b": 0, "c": 0, "d": 0, "e": 0})
 main_loop = [4, 3, 2, 1, 0]
 feedback_loop = [5, 6, 7, 8, 9]
 main_loop_result = perm_calc(main_loop, 0)
+print(main_loop_result)
 feedback_loop_result = perm_calc(
     feedback_loop["high"], 880726, feedback_loop["index_init"]
 )
