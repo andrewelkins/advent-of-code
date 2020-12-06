@@ -15,5 +15,9 @@ dotnet run
 ```
 
 ```
-dotnet fsi 01.fsx;dotnet run
+dotnet new console -lang "F#" -o "DayX"
+cd DayX
+dotnet run
 ```
+
+`|> printfn "%A"`
