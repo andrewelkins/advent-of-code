@@ -16,9 +16,6 @@ let splitFile characterToSplit sequence =
             yield r.ToArray()
     }
 
-let stringToSet aString =
-    Set aString
-
 let sumOfCounts =
     splitFile "" data
     |> Seq.sumBy (System.String.Concat >> set >> Set.count)
@@ -27,7 +24,7 @@ let sumOfCountsIntersect =
     splitFile "" data
     |> Seq.map List.ofArray
     |> Seq.map (List.filter (fun i -> i <> ""))
-    |> Seq.map (List.map stringToSet)
+    |> Seq.map (List.map set)
     |> Seq.map (Set.intersectMany)
     |> Seq.map (Set.count)
     |> Seq.sum
